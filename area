@@ -1,1 +1,175 @@
+#include <iostream>
+#include <string>
 
+using namespace std;
+
+int area;
+string ans;
+string yourname;
+string map[40];
+
+void introduction ()
+{
+	cout<<"Zorck : The Mash-up\n";
+	cout<<"Copyright (c) 2016, 2017, 2018 Infocom, Inc. All rights reserved.\n";
+	cout<<"Zorck is a registered trademark of Infocom, Inc.\n";
+	cout<<"Revision 88 / Serial number 840726\n\n";
+}
+
+void maptree () //0
+{
+	cout<<"Please enter your name : ";
+	cin>> yourname;
+	cout<<"\n*Tree*\n"<<yourname<<", you're sitting under a large tree, with a peculiar low branch.\n"; 
+	area = 0;
+	cin>>ans;
+	if (ans == "map")
+	{
+	cout<<map[area];
+	}
+} 
+
+void mapuptree () //1 ITEM POKEMON EGG
+{
+	cout<<"\n*Top of Tree*\nOn a branch in a nest is Professor Oaks Pokemon Egg.";
+	area = 1;
+	cin>>ans;
+	if (ans == "map")
+	{
+	cout<<map[area];
+	}
+}
+
+void maphouseentrance ()//2 ITEM OIL IN CLOSET
+{
+	cout<<"\n*Abandoned House*\nYou've entered an abandoned house. In front of you, is a staircase and to the right of you, a closet.";
+	area = 2;
+	cin>>ans;
+	if (ans == "map")
+	{
+		cout<<map[area];
+	}
+	if (ans == "open closet")
+	{
+		cout<<"*Closet*\nThere's nothing but a small bottle of oil on the shelf of the closet.\n";
+	}
+}
+
+void maplivingroom () //3 ITEM SAURONS SWORD
+{
+	cout<<"*Living Room*\nOn the couch is Sauron's sword, and to the left are stairs that lead to the basement.";
+	area = 3;
+	cin>>ans;
+	if (ans == "map")
+	{
+		cout<<map[area];
+	}
+}
+
+void mapdarkbasement () //4
+{
+	cout<<"*Basement*\nYou've entered a dark basement, be careful, who knows what may be lurking around here...\n";
+	area = 4;
+	cin>>ans;
+	if (ans == "map")
+	{
+		cout<<map[area];
+	}
+}	
+
+void mapkitchen () //5 ITEM candle ITEM mushroom life in fridge ITEM matches in cupboard
+{
+	cout<<"*Kitchen*\nOn the kitchen table is an unlit candle. There is also a closed cupboard and refrigerator. Beside the table is an open window.\n";
+	area = 5;
+	cin>>ans;
+	if (ans == "map")
+	{
+		cout<<map[area];
+	}
+}
+
+void maptunnel () //6
+{
+	
+	cout<<"*Tunnel*\nTorches light the dark tunnel to reveal 3 different corridors...\n";
+	area = 6;
+	cin>>ans;
+	if (ans == "map")
+	{
+		cout<<map[area];
+	}
+}
+
+void mapdungeon () //7
+{
+	cout<<"*Dungeon*\n You've seemed to wander into the dungeon of Bowser's Castle... Mario is chained to the wall. Passed him are stairs.\n";
+	area = 7;
+	cin>>ans;
+	if (ans == "map")
+	{
+		cout<<map[area];
+	}
+}
+
+void maplitbasement () //8 ITEM key behind hydra
+{
+	cout<<"*Basement*\nA fierce hydra has step out of the shadows! It challenges you, prepare for battle.\n";
+	area = 8;
+	cin>>ans;
+	if (ans == "map")
+	{
+		cout<<map[area];
+	}
+}
+
+	
+void mapforest () //9
+{
+	cout<<"\n*Lost Woods Forest*\nYou're at the entrance of the Lost Woods. Very few who walk in, ever come out.\n";
+	area = 9;
+	cin>>ans;
+	if (ans == "map")
+	{
+		cout<<map[area];
+	}
+}
+
+void mapupstairs () //40
+{
+	cout<<"*Upstairs*\nUp the stairs is a large locked door. On the other side you hear chanting.\n";
+	area = 40;
+	cin>>ans;
+	if (ans == "map")
+	{
+		cout<<map[area];
+	}
+}	
+
+void maproom () //41
+{
+	cout<<"*Ceremonial Room*\nAfter entering the room the door closes shut. You're suddenly surrounded by 10 members of the cult of Scientology. They demand you join them or die. What do you decide?\n";
+	area = 41;
+	cin>>ans;
+	if (ans == "map")
+	{
+		cout<<map[area];
+	}
+}
+
+int main ()
+{
+	map[0]= "To the east is an eerie swamp, to the west is Lost Woods Forest and to the North is a house.\n"; //Tree
+	map[1]= "From up here, you can see the realm of Asgard.\n";//up tree
+	map[2]= "To the east, is a living room. To the west is a kitchen.\n"; //house entrance
+	map[3]= "To the west in the entrance of the house. Down the stairs is the dark basement.\n"; // living room
+	map[4]= "Too dark to see where you're going";//dark basement
+	map[5]= "To the east is the entrance of the house.\n";//kitchen
+	map[6]= "To the north, east and west are the corridors. To the south is the basement.\n";//tunnel
+	map[7]="To the south is the tunnel. Up the stairs is Bowser's Castle.\n";//dungeon
+	map[8]="Back up the stairs in the Living Room. North is a small tunnel.\n";//lit basement
+	map[9]= "Ahead is uncharted land... To the north is the Lost Woods. To the East is the large Tree.\n"; //forest entrance
+	map[40]= "To the north is a large room.\n";//upstairs
+	map[41]= "No where to escape the door is blocked...\n";//cult room
+	introduction ();
+    maptree () ;
+}
