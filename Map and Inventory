@@ -1,0 +1,73 @@
+// Group Project.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int area;
+string ans;
+string map[30];
+
+void maplake()
+{
+	cout << "Your party is standing on a long sandy beach.\nTo your south lies a dense forest\nTo your north is a large body of water.";
+	cout << "The ways to your east and west are blocked by large cliff faces.";
+	area = 20;
+	cin >> ans;
+}
+void mapswim()
+{
+	cout << "Your party swims out into the lake.\nThe ways to your east and west are blocked by large cliff faces.\nThere is a castle on the north shore of the lake.";
+	area = 21;
+	cin >> ans;
+}
+void mapunderwater()
+{
+	cout << "You dive underwater using the scuba suit and see a sunken plane, the words 'Malasia Flight 370' are written on the side.";
+	area = 22;
+	cin >> ans;
+}
+void mapcastle()
+{
+	cout << "Your party is standing underneath a large castle gate. To your east lies a path winding through the mountains.\nTo your north is a castle.\nTo your south is a large lake.\n";
+	area = 23;
+	cin >> ans;
+}
+void mapcastleinside()
+{
+	cout << "Your party enters the castle. There is a dragon sleeping to your east. There is a shield lying on a table in the centre of the room";
+	area = 24;
+	cin >> ans;
+}
+void mapswamp()
+{
+	cout << "Your party enters into a dark and dreary swamp.\nThere is a an old rowboat to your east\nThere is a path leading to a clearing to your south\nThere is an old house to your west\n";
+	cout << "There is a mountain path to your north.\n";
+	area = 25;
+	cin >> ans;
+}
+void mapboat()
+{
+	cout << "Your party walks towards the boat and peers inside.\nThere is a set of scuba gear.\n";
+	area = 26;
+	cin >> area;
+}
+
+int main ()
+{
+	map[20] = "To your south lies a dense forest\nTo your north is a large body of water. The ways to your east and west are blocked by large cliff faces.";
+	map[21] = "The ways to your east and west are blocked by large cliff faces.\nThere is a castle on the north shore of the lake."; 
+	map[22] = "There is a sunken plane underneath you, the words 'Malasia Flight 370' are written on the side.";
+	map[23] = "To your east lies a path winding through the mountains.\nTo your north is a castle.\nTo your south is a large lake.\n";
+	map[24] = "There is a dragon sleeping to your east. There is a shield lying on a table in the centre of the room";
+	map[25] = "There is a an old rowboat to your east\nThere is a path leading to a clearing to your south\nThere is an old house to your west\nThere is a mountain path to your north.\n";
+	map[26] = "You are in a swamp. There is a path leading to a clearing to your south\nThere is an old house to your west\nThere is a mountain path to your north.\n"; 
+	//map[27] = 
+	//map[28] = 
+	//map[29] = 
+
+	return 0;
+}
