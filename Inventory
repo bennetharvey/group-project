@@ -1,0 +1,62 @@
+// Inventory2.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	string ans;
+	int candle = 0;
+	int sword = 0;
+	int helmet = 0;
+	int hpotion = 0;
+	int mpotion = 0;
+	int stone = 0;
+	int scuba = 0;
+
+	cin >> ans;
+	if (ans == "I") {
+		cout << "You are carrying: \n";
+		cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+		if (candle > 0) {
+			cout << "A Candle\n";
+		}
+		if (sword > 0) {
+			cout << "A Sword\n";
+		}
+		if (helmet > 0) {
+			cout << "A Helmet\n";
+		}
+		if (hpotion == 1) {
+			cout <<"1 Health Potion\n";
+		}
+		if (hpotion > 1) {
+			cout << hpotion << " Health Potions\n";
+		}
+		if (mpotion == 1) {
+			cout << "1 Mana Potion\n";
+		}
+		if (mpotion > 1) {
+			cout << hpotion << " Mana Potions\n";
+		}
+		if (stone == 1) {
+			cout << "1 Infinity Stone\n";
+		}
+		if (stone > 1) {
+			cout << stone << " Infinity Stones\n";
+		}
+		if (scuba > 0) {
+			cout << "Scuba Gear\n";
+		}
+		else {
+			cout << "nothing\n";
+		}
+		cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+		system("pause");
+	}
+    return 0;
+}
