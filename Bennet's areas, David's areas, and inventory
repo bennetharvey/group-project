@@ -1,0 +1,401 @@
+// David and my areas.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int area;
+string ans;
+string map[40];
+int candle = 1;
+int sword = 1;
+int helmet = 10;
+int hpotion = 01;
+int mpotion = 01;
+int stone = 01;
+int scuba = 01;
+int egg = 01;
+int oil = 01;
+int Ssword = 10;
+int matches = 10;
+int key = 10;
+
+void inventory()
+{
+		cout << "\nYou are carrying: \n";
+		cout << "|~~~~~~~~~~~~~~~~~~~~~~~|\n";
+		if (key > 0) {
+			cout << "| A Key                 |\n";
+		}
+		if (matches > 0) {
+			cout << "| Matches               |\n";
+		}
+		if (Ssword > 0) {
+			cout << "| Saurons Sword         |\n";
+		}
+		if (oil > 0) {
+			cout << "| A Bottle Of Oil       |\n";
+		}
+		if (egg > 0) {
+			cout << "| A Pokemon Egg         |\n";
+		}
+		if (candle > 0) {
+			cout << "| A Candle              |\n";
+		}
+		if (sword > 0) {
+			cout << "| A Sword               |\n";
+		}
+		if (helmet > 0) {
+			cout << "| A Helmet              |\n";
+		}
+		if (hpotion == 1) {
+			cout << "| 1 Health Potion       |\n";
+		}
+		if (hpotion > 1) {
+			cout << "| " << hpotion << " Health Potions     |\n";
+		}
+		if (mpotion == 1) {
+			cout << "| 1 Mana Potion         |\n";
+		}
+		if (mpotion > 1) {
+			cout << "| " << mpotion << " Mana Potions        |\n";
+		}
+		if (stone == 1) {
+			cout << "| 1 Infinity Stone      |\n";
+		}
+		if (stone > 1) {
+			cout << "| " << stone << " Infinity Stones         |\n";
+		}
+		if (scuba > 0) {
+			cout << "| Scuba Gear            |\n";
+		}
+		else {
+			cout << "| nothing               |\n";
+		}
+		cout << "|~~~~~~~~~~~~~~~~~~~~~~~|\n";
+		system("pause");
+}
+void introduction()
+{
+	cout << "Zorck : The Mash-up\n";
+	cout << "Copyright (c) 2016, 2017, 2018 Infocom, Inc. All rights reserved.\n";
+	cout << "Zorck is a registered trademark of Infocom, Inc.\n";
+	cout << "Revision 88 / Serial number 840726\n\n";
+}
+
+void maptree() //0
+{
+	cout << "\n*Tree*\nYou're sitting under a large tree, with a peculiar low branch.\n";
+	area = 0;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+
+void mapuptree() //1 ITEM POKEMON EGG
+{
+	cout << "\n*Top of Tree*\nOn a branch in a nest is Professor Oaks Pokemon Egg.";
+	area = 1;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+
+void maphouseentrance()//2 ITEM OIL IN CLOSET
+{
+	cout << "\n*Abandoned House*\nYou've entered an abandoned house. In front of you, is a staircase and to the right of you, a closet.";
+	area = 2;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+	if (ans == "open closet")
+	{
+		cout << "*Closet*\nThere's nothing but a small bottle of oil on the shelf of the closet.\n";
+	}
+}
+
+void maplivingroom() //3 ITEM SAURONS SWORD
+{
+	cout << "*Living Room*\nOn the couch is Sauron's sword, and to the left are stairs that lead to the basement.";
+	area = 3;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+
+void mapdarkbasement() //4
+{
+	cout << "*Basement*\nYou've entered a dark basement, be careful, who knows what may be lurking around here...\n";
+	area = 4;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+
+void mapkitchen() //5 ITEM candle ITEM mushroom life in fridge ITEM matches in cupboard
+{
+	cout << "*Kitchen*\nOn the kitchen table is an unlit candle. There is also a closed cupboard and refrigerator. Beside the table is an open window.\n";
+	area = 5;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+
+void maptunnel() //6
+{
+
+	cout << "*Tunnel*\nTorches light the dark tunnel to reveal 3 different corridors...\n";
+	area = 6;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+
+void mapdungeon() //7
+{
+	cout << "*Dungeon*\n You've seemed to wander into the dungeon of Bowser's Castle... Mario is chained to the wall. Passed him are stairs.\n";
+	area = 7;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+
+void maplitbasement() //8 ITEM key behind hydra
+{
+	cout << "*Basement*\nA fierce hydra has step out of the shadows! It challenges you, prepare for battle.\n";
+	area = 8;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+
+
+void mapforest() //9
+{
+	cout << "\n*Lost Woods Forest*\nYou're at the entrance of the Lost Woods. Very few who walk in, ever come out.\n";
+	area = 9;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+
+void mapupstairs() //40
+{
+	cout << "*Upstairs*\nUp the stairs is a large locked door. On the other side you hear chanting.\n";
+	area = 40;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+
+void maproom() //41
+{
+	cout << "*Ceremonial Room*\nAfter entering the room the door closes shut. You're suddenly surrounded by 10 members of the cult of Scientology. They demand you join them or die. What do you decide?\n";
+	area = 41;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+
+void maplake()
+{
+	cout << "Your party is standing on a long sandy beach.\nTo your south lies a dense forest\nTo your north is a large body of water.";
+	cout << "The ways to your east and west are blocked by large cliff faces.";
+	area = 20;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+void mapswim()
+{
+	cout << "Your party swims out into the lake.\nThe ways to your east and west are blocked by large cliff faces.\nThere is a castle on the north shore of the lake.";
+	area = 21;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+void mapunderwater()
+{
+	cout << "You dive underwater using the scuba suit and see a sunken plane, the words 'Malasia Flight 370' are written on the side.";
+	area = 22;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+void mapcastle()
+{
+	cout << "Your party is standing underneath a large castle gate. To your east lies a path winding through the mountains.\nTo your north is a castle.\nTo your south is a large lake.\n";
+	area = 23;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+void mapcastleinside()
+{
+	cout << "Your party enters the castle. There is a dragon sleeping to your east. There is a shield lying on a table in the centre of the room";
+	area = 24;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+void mapswamp()
+{
+	cout << "Your party enters into a dark and dreary swamp.\nThere is a an old rowboat to your east\nThere is a path leading to a clearing to your south\nThere is an old house to your west\n";
+	cout << "There is a mountain path to your north.\n";
+	area = 25;
+	cin >> ans;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+void mapboat()
+{
+	cout << "Your party walks towards the boat and peers inside.\nThere is a set of scuba gear.\n";
+	area = 26;
+	cin >> area;
+	if (ans == "I" || ans == "i" || ans == "Inventory" || ans == "inventory")
+	{
+		inventory();
+	}
+	if (ans == "map")
+	{
+		cout << map[area];
+	}
+}
+
+int main()
+{
+	map[0] = "To the east is an eerie swamp, to the west is Lost Woods Forest and to the North is a house.\n"; //Tree
+	map[1] = "From up here, you can see the realm of Asgard.\n";//up tree
+	map[2] = "To the east, is a living room. To the west is a kitchen.\n"; //house entrance
+	map[3] = "To the west in the entrance of the house. Down the stairs is the dark basement.\n"; // living room
+	map[4] = "Too dark to see where you're going";//dark basement
+	map[5] = "To the east is the entrance of the house.\n";//kitchen
+	map[6] = "To the north, east and west are the corridors. To the south is the basement.\n";//tunnel
+	map[7] = "To the south is the tunnel. Up the stairs is Bowser's Castle.\n";//dungeon
+	map[8] = "Back up the stairs in the Living Room. North is a small tunnel.\n";//lit basement
+	map[9] = "Ahead is uncharted land... To the north is the Lost Woods. To the East is the large Tree.\n"; //forest entrance
+	map[20] = "To your south lies a dense forest\nTo your north is a large body of water. The ways to your east and west are blocked by large cliff faces."; //Beach
+	map[21] = "The ways to your east and west are blocked by large cliff faces.\nThere is a castle on the north shore of the lake.";//Swimming
+	map[22] = "There is a sunken plane underneath you, the words 'Malasia Flight 370' are written on the side.";//Underwater
+	map[23] = "To your east lies a path winding through the mountains.\nTo your north is a castle.\nTo your south is a large lake.\n";//Castlegate
+	map[24] = "There is a dragon sleeping to your east. There is a shield lying on a table in the centre of the room";//Castle
+	map[25] = "There is a an old rowboat to your east\nThere is a path leading to a clearing to your south\nThere is an old house to your west\nThere is a mountain path to your north.\n";//Swamp
+	map[26] = "You are in a swamp. There is a path leading to a clearing to your south\nThere is an old house to your west\nThere is a mountain path to your north.\n";//At boat
+	map[40] = "To the north is a large room.\n";//upstairs
+	map[41] = "No where to escape the door is blocked...\n";//cult room
+	introduction();
+	maptree();
+
+	return 0;
+}
